@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
-import { GithubIcon } from "@/components/Icons";
 import Section from "@/components/Section";
 import Card from "@/components/Card";
 import Badge from "@/components/Badge";
@@ -57,36 +55,12 @@ export default function ProjectsPage() {
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-slate-600 text-sm mb-4">{project.description}</p>
               </div>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <Badge key={tag} variant="default">
                     {tag}
                   </Badge>
                 ))}
-              </div>
-              <div className="flex gap-3">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm text-slate-600 hover:text-cyan-600 transition-colors"
-                  >
-                    <GithubIcon size={16} className="mr-1" />
-                    Code
-                  </a>
-                )}
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm text-slate-600 hover:text-cyan-600 transition-colors"
-                  >
-                    <ExternalLink size={16} className="mr-1" />
-                    Demo
-                  </a>
-                )}
               </div>
             </Card>
           ))}

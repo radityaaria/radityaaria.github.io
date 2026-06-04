@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/Icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/Icons";
 import { profile } from "@/data/profile";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: GithubIcon, href: profile.social.github, label: "GitHub" },
     { icon: LinkedinIcon, href: profile.social.linkedin, label: "LinkedIn" },
-    { icon: TwitterIcon, href: profile.social.twitter, label: "Twitter" },
+    { icon: InstagramIcon, href: profile.social.instagram, label: "Instagram" },
     { icon: Mail, href: `mailto:${profile.email}`, label: "Email" },
   ];
 

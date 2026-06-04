@@ -10,7 +10,7 @@ export const profile = {
   social: {
     github: "https://github.com/radityaaria",
     linkedin: "https://linkedin.com/in/raditya-aria-ramadhani-46303225a",
-    twitter: "https://twitter.com/radityaaria",
+    instagram: "https://instagram.com/ariaramadhani",
   },
   cv: "/CV_Raditya_Aria_Ramadhani.pdf",
 };
@@ -28,7 +28,7 @@ export const skills = [
   {
     category: "Performance Testing",
     items: [
-      { name: "Grafana k6", level: "Expert" },
+      { name: "Grafana k6", level: "Advanced" },
       { name: "Load Testing", level: "Advanced" },
       { name: "Stress Testing", level: "Advanced" },
       { name: "Spike Testing", level: "Advanced" },
@@ -121,6 +121,15 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "AI-Powered Software Testing Assistant",
+    description: "AI-powered software testing assistant for analyzing k6 performance test results, generating automated reports, comparing test scenarios, exporting CSV summaries, and visualizing metrics using Python. Future: Local LLM, RAG, and fine-tuning capabilities.",
+    tags: ["Python", "k6", "AI/ML", "Performance", "Pandas", "Matplotlib"],
+    type: "Performance",
+    github: "https://github.com/radityaaria/ai-powered-software-testing-assistant",
+    demo: null,
+    image: "/projects/ai-testing.jpg",
+  },
+  {
     title: "E2E Automation Testing Suite with Cypress",
     description: "Comprehensive Cypress automation framework for End-to-End testing with custom commands, test case coverage, and integration with CI/CD pipelines for continuous quality assurance.",
     tags: ["Cypress", "E2E Testing", "JavaScript", "Automation"],
@@ -178,35 +187,56 @@ export const projects = [
 
 export const certifications = [
   {
-    title: "Bachelor of Informatics Engineering",
-    issuer: "Janabadra University",
-    date: "GPA: 3.65/4.00",
+    title: "Cypress Test Automation",
+    issuer: "Test Automation University",
+    date: "2026",
+    file: "/sertificate/certificates_TAU-cypress.pdf",
   },
   {
-    title: "Automation Testing with Cypress",
+    title: "Playwright Test Automation",
+    issuer: "Test Automation University",
+    date: "2026",
+    file: "/sertificate/certificates_TAU_Playwright.pdf",
+  },
+  {
+    title: "Leadership Certificate",
     issuer: "Professional Development",
     date: "2026",
+    file: "/sertificate/Leadership_certificate_.pdf",
   },
   {
-    title: "Performance Testing with Grafana k6",
-    issuer: "Professional Development",
-    date: "2025",
+    title: "Frontend Web Development with Next.js",
+    issuer: "Guru Tamu Program",
+    date: "2024",
+    file: "/sertificate/Sertifikat_GuruTamu-RadityaAria_FEWebDevelopingNextJS.pdf",
+  },
+  {
+    title: "Game Development",
+    issuer: "Guru Tamu Program",
+    date: "2024",
+    file: "/sertificate/Sertifikat_GuruTamu-RadityaAria_GameDeveloping.pdf",
+  },
+  {
+    title: "Linux Ubuntu OS Installation",
+    issuer: "Guru Tamu Program",
+    date: "2024",
+    file: "/sertificate/Sertifikat_GuruTamu-RadityaAria_InstalasiOSLinuxUbuntu.pdf",
   },
 ];
 
 export const testimonials = [
   {
-    name: "Development Team Lead",
+    name: "IT Director",
     role: "Engineering Manager",
     company: "Golden Digital",
-    content: "Raditya has exceptional attention to detail in finding bugs and providing comprehensive root cause analysis. His Cypress automation framework significantly improved our testing efficiency and product quality.",
+    content: "Aria has exceptional attention to detail in finding bugs and providing comprehensive root cause analysis. His Cypress automation framework significantly improved our testing efficiency and product quality.",
     avatar: "/avatars/lead.jpg",
   },
   {
     name: "Product Manager",
     role: "Product Manager",
     company: "PT Carakan Sadhana Dirgantara",
-    content: "Outstanding technical skills combined with excellent communication abilities. Raditya bridges the gap between technical and business teams effectively, ensuring all features meet quality standards.",
+    content: "Outstanding technical skills combined with excellent communication abilities. Aria bridges the gap between technical and business teams effectively, ensuring all features meet quality standards.",
     avatar: "/avatars/pm.jpg",
   },
 ];

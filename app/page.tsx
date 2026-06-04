@@ -1,5 +1,5 @@
-import { Download, Mail, ExternalLink } from "lucide-react";
-import { GithubIcon, WhatsappIcon } from "@/components/Icons";
+import { Download } from "lucide-react";
+import { WhatsappIcon } from "@/components/Icons";
 import Image from "next/image";
 import Section from "@/components/Section";
 import Card from "@/components/Card";
@@ -30,7 +30,9 @@ export default function Home() {
 
             {/* Content */}
             <div className="flex-1 text-center md:text-left">
-              <h1 className="mb-4 text-balance">{profile.name}</h1>
+              <h1 className="mb-4 text-balance">
+                Raditya <span className="text-cyan-600">Aria</span> Ramadhani
+              </h1>
               <p className="text-2xl sm:text-3xl text-cyan-600 font-semibold mb-4">
                 {profile.role}
               </p>
@@ -122,36 +124,12 @@ export default function Home() {
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-slate-600 text-sm mb-4">{project.description}</p>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="default">
                       {tag}
                     </Badge>
                   ))}
-                </div>
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-sm text-slate-600 hover:text-cyan-600 transition-colors"
-                    >
-                      <GithubIcon size={16} className="mr-1" />
-                      Code
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-sm text-slate-600 hover:text-cyan-600 transition-colors"
-                    >
-                      <ExternalLink size={16} className="mr-1" />
-                      Demo
-                    </a>
-                  )}
                 </div>
               </Card>
             ))}
@@ -166,20 +144,35 @@ export default function Home() {
 
       {/* Certifications Section */}
       <Section id="certifications">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-center mb-12">Certifications & Achievements</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
-              <Card key={index} hover={false}>
-                <div className="text-center">
+              <Card key={index} hover={false} className="flex flex-col h-full">
+                <div className="flex flex-col flex-grow text-center">
                   <div className="w-16 h-16 mx-auto mb-4 bg-cyan-100 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🏆</span>
                   </div>
-                  <h4 className="font-semibold mb-2 text-slate-900">{cert.title}</h4>
-                  <p className="text-sm text-slate-600">{cert.issuer}</p>
-                  <Badge variant="primary" className="mt-2">
+                  <h4 className="font-semibold mb-2 text-slate-900 min-h-[3rem] flex items-center justify-center">
+                    {cert.title}
+                  </h4>
+                  <p className="text-sm text-slate-600 mb-3 min-h-[2.5rem] flex items-center justify-center">
+                    {cert.issuer}
+                  </p>
+                  <Badge variant="primary" className="mb-4 mx-auto">
                     {cert.date}
                   </Badge>
+                  <div className="mt-auto">
+                    <Button 
+                      href={cert.file} 
+                      variant="outline" 
+                      download={`${cert.title.replace(/\s+/g, '_')}.pdf`}
+                      className="w-full text-sm py-2"
+                    >
+                      <Download size={16} className="mr-2" />
+                      Download
+                    </Button>
+                  </div>
                 </div>
               </Card>
             ))}
