@@ -1,65 +1,216 @@
+import { Download, Mail, ExternalLink } from "lucide-react";
+import { GithubIcon, WhatsappIcon } from "@/components/Icons";
 import Image from "next/image";
+import Section from "@/components/Section";
+import Card from "@/components/Card";
+import Badge from "@/components/Badge";
+import Button from "@/components/Button";
+import { profile, skills, experiences, projects, certifications, testimonials } from "@/data/profile";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero Section */}
+      <Section className="pt-32 pb-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Photo */}
+            <div className="flex-shrink-0">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-cyan-600 shadow-xl">
+                <Image
+                  src="/headshot-profile.png"
+                  alt={profile.name}
+                  fill
+                  sizes="(max-width: 768px) 192px, 256px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="mb-4 text-balance">{profile.name}</h1>
+              <p className="text-2xl sm:text-3xl text-cyan-600 font-semibold mb-4">
+                {profile.role}
+              </p>
+              <p className="text-base sm:text-lg text-slate-600 mb-8">
+                {profile.tagline}
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                <Button href={profile.cv} variant="primary" download="CV-Raditya-Aria-Ramadhani.pdf">
+                  <Download size={20} className="mr-2" />
+                  Download CV
+                </Button>
+                <Button href={profile.whatsapp} variant="outline" external>
+                  <WhatsappIcon size={20} className="mr-2" />
+                  Contact Me
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Skills Section */}
+      <Section background="slate" id="skills">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-center mb-12">Skills & Expertise</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((category) => (
+              <Card key={category.category} hover={false}>
+                <h3 className="text-xl font-semibold mb-4 text-center text-cyan-600">
+                  {category.category}
+                </h3>
+                <ul className="space-y-3">
+                  {category.items.map((skill) => (
+                    <li key={skill.name} className="flex justify-between items-center">
+                      <span className="text-slate-700">{skill.name}</span>
+                      <Badge variant="default">{skill.level}</Badge>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Experience Section */}
+      <Section id="experience">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-center mb-12">QA Related Work Experience</h2>
+          <div className="space-y-6">
+            {experiences.map((exp, index) => (
+              <Card key={index}>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                  <div>
+                    <h3 className="text-xl font-semibold text-slate-900">{exp.title}</h3>
+                    <p className="text-cyan-600 font-medium">{exp.company}</p>
+                  </div>
+                  <Badge variant="primary">{exp.period}</Badge>
+                </div>
+                <p className="text-slate-600 mb-4">{exp.description}</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-slate-700">Key Achievements:</p>
+                  <ul className="list-disc list-inside space-y-1 text-slate-600 text-sm">
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Projects Section */}
+      <Section background="slate" id="projects">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center mb-4">Featured Projects</h2>
+          <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+            Selection of testing frameworks, automation tools, and web applications I&apos;ve built
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.slice(0, 6).map((project, index) => (
+              <Card key={index}>
+                <div className="mb-4">
+                  <div className="aspect-video bg-gradient-to-br from-cyan-100 to-slate-100 rounded-md mb-4 flex items-center justify-center">
+                    <div className="text-4xl">🧪</div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-slate-600 text-sm mb-4">{project.description}</p>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag) => (
+                    <Badge key={tag} variant="default">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex gap-3">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-sm text-slate-600 hover:text-cyan-600 transition-colors"
+                    >
+                      <GithubIcon size={16} className="mr-1" />
+                      Code
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-sm text-slate-600 hover:text-cyan-600 transition-colors"
+                    >
+                      <ExternalLink size={16} className="mr-1" />
+                      Demo
+                    </a>
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Button href="/projects" variant="outline">
+              View All Projects
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </Section>
+
+      {/* Certifications Section */}
+      <Section id="certifications">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-center mb-12">Certifications & Achievements</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {certifications.map((cert, index) => (
+              <Card key={index} hover={false}>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-cyan-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🏆</span>
+                  </div>
+                  <h4 className="font-semibold mb-2 text-slate-900">{cert.title}</h4>
+                  <p className="text-sm text-slate-600">{cert.issuer}</p>
+                  <Badge variant="primary" className="mt-2">
+                    {cert.date}
+                  </Badge>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </Section>
+
+      {/* Testimonials Section */}
+      <Section background="slate" id="testimonials">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-center mb-12">Testimonials</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} hover={false}>
+                <p className="text-slate-600 mb-6 italic">&quot;{testimonial.content}&quot;</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-slate-400 rounded-full flex items-center justify-center text-white font-bold">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900">{testimonial.name}</p>
+                    <p className="text-sm text-slate-600">
+                      {testimonial.role} at {testimonial.company}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </Section>
+    </>
   );
 }
