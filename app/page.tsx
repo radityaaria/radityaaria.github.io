@@ -159,9 +159,20 @@ export default function Home() {
             {certifications.map((cert, index) => (
               <Card key={index} hover={false} className="flex flex-col h-full">
                 <div className="flex flex-col flex-grow text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-cyan-100 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🏆</span>
-                  </div>
+                  {cert.image ? (
+                    <div className="w-full aspect-video mb-4 rounded-lg overflow-hidden relative bg-slate-100">
+                      <Image
+                        src={cert.image}
+                        alt={cert.title}
+                        fill
+                        className="object-contain p-2"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 mx-auto mb-4 bg-cyan-100 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">🏆</span>
+                    </div>
+                  )}
                   <h4 className="font-semibold mb-2 text-slate-900 min-h-[3rem] flex items-center justify-center">
                     {cert.title}
                   </h4>
