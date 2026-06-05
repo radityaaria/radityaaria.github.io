@@ -118,8 +118,17 @@ export default function Home() {
             {projects.slice(0, 6).map((project, index) => (
               <Card key={index}>
                 <div className="mb-4">
-                  <div className="aspect-video bg-gradient-to-br from-cyan-100 to-slate-100 rounded-md mb-4 flex items-center justify-center">
-                    <div className="text-4xl">🧪</div>
+                  <div className="aspect-video bg-gradient-to-br from-cyan-100 to-slate-100 rounded-md mb-4 flex items-center justify-center overflow-hidden relative">
+                    {project.image && project.image !== "/projects/k6.jpg" && project.image !== "/projects/cypress.jpg" && project.image !== "/projects/monitoring.jpg" && project.image !== "/projects/api-testing.jpg" && project.image !== "/projects/web-qa.jpg" && project.image !== "/projects/qms.jpg" && project.image !== "/projects/ai-testing.jpg" ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="text-4xl">🧪</div>
+                    )}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-slate-600 text-sm mb-4">{project.description}</p>

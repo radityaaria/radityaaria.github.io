@@ -127,7 +127,7 @@ export const projects = [
     type: "Performance",
     github: "https://github.com/radityaaria/ai-powered-software-testing-assistant",
     demo: null,
-    image: "/projects/ai-testing.jpg",
+    image: "/projects/response-time-chart.png",
   },
   {
     title: "E2E Automation Testing Suite with Cypress",
@@ -136,7 +136,7 @@ export const projects = [
     type: "Automation",
     github: "https://github.com/radityaaria/cypress-automation",
     demo: null,
-    image: "/projects/cypress.jpg",
+    image: "/projects/cypress.png",
   },
   {
     title: "Performance Testing with Grafana k6",
@@ -145,7 +145,7 @@ export const projects = [
     type: "Performance",
     github: "https://github.com/radityaaria/k6-performance-testing",
     demo: null,
-    image: "/projects/k6.jpg",
+    image: "/projects/grafana.png",
   },
   {
     title: "Server Performance Monitoring & Analysis",
@@ -154,7 +154,7 @@ export const projects = [
     type: "Performance",
     github: "https://github.com/radityaaria/server-monitoring",
     demo: null,
-    image: "/projects/monitoring.jpg",
+    image: "/projects/htop.png",
   },
   {
     title: "API Testing & Bug Analysis",
@@ -163,7 +163,7 @@ export const projects = [
     type: "QA",
     github: "https://github.com/radityaaria/api-testing-suite",
     demo: null,
-    image: "/projects/api-testing.jpg",
+    image: "/projects/postman.png",
   },
   {
     title: "Web Application QA & Frontend Development",
@@ -172,7 +172,7 @@ export const projects = [
     type: "Web",
     github: "https://github.com/radityaaria/web-qa-project",
     demo: "https://web-qa-demo.vercel.app",
-    image: "/projects/web-qa.jpg",
+    image: "/projects/porto.png",
   },
   {
     title: "Quality Management System Implementation",
@@ -181,7 +181,7 @@ export const projects = [
     type: "QA",
     github: "https://github.com/radityaaria/qms-implementation",
     demo: null,
-    image: "/projects/qms.jpg",
+    image: "/projects/iso.png",
   },
 ];
 
