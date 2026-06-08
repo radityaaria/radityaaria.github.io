@@ -1,7 +1,7 @@
 export const profile = {
   name: "Raditya Aria Ramadhani",
   role: "Automation QA Engineer",
-  tagline: "Professional with over 7 years of experience in Quality Assurance, specializing in with Cypress, Playwright Beginner, Katalon Studio Beginner E2E automation testing and performance testing with Grafana k6",
+  tagline: "Professional with over 7 years of experience in Quality Assurance, specializing in with Cypress, Playwright, Katalon Studio E2E automation testing and performance testing with Grafana k6",
   bio: "Professional dengan pengalaman lebih dari 7 tahun di Quality Control dan Quality Assurance di industri manufaktur dan software development. Saat ini fokus sebagai QA Automation Engineer yang mengkhususkan diri dalam mengembangkan automated End-to-End (E2E) testing menggunakan Cypress dan melakukan performance testing menggunakan Grafana k6. Berpengalaman dalam Load Testing, Stress Testing, dan Spike Testing untuk mengevaluasi stabilitas, skalabilitas, dan performa backend system. Memiliki background kuat dalam ISO 9001 quality management, internal auditing, dan continuous improvement initiatives.",
   email: "ariaramadhani72@gmail.com",
   location: "Yogyakarta, Indonesia",
@@ -21,7 +21,7 @@ export const skills = [
     items: [
       { name: "Cypress E2E Testing", level: "Expert" },
       { name: "Playwright E2E Testing", level: "Beginner" },
-      { name: "Katalon Studio E2E Testing", level: "Beginner" },
+      { name: "Katalon Studio E2E Testing", level: "Intermediate" },
       { name: "Test Script Development", level: "Expert" },
       { name: "Test Case Design", level: "Expert" },
     ],
@@ -149,7 +149,7 @@ export const projects = [
   image: "/projects/playwright.png",
 },
 {
-  title: "Katalon Studio E2E Automation Beginner",
+  title: "Katalon Studio E2E Automation",
   description: "Beginner-level End-to-End automation testing project using Katalon Studio, focusing on web test recording, test case creation, object repository management, and automated test execution for web application quality assurance.",
   tags: ["Katalon Studio", "E2E Testing", "No-Code Testing", "Automation"],
   type: "Automation",
