@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/data/profile";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://yourportfolio.com"; // Ganti dengan domain kamu
+  const baseUrl = siteConfig.url;
 
   return [
     {

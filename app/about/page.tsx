@@ -1,9 +1,19 @@
+import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Card from "@/components/Card";
 import Badge from "@/components/Badge";
 import Image from "next/image";
 import { profile, skills } from "@/data/profile";
 import { CheckCircle2, Code2, TestTube2, Gauge, Eye } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Raditya Aria Ramadhani — Automation QA Engineer with 7+ years of experience in Cypress, Playwright, Katalon Studio, and Grafana k6 performance testing.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   const toolsStack = [

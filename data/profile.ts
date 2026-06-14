@@ -1,3 +1,9 @@
+export const siteConfig = {
+  url: "https://radityaariaporto.vercel.app",
+  name: "Raditya Aria Ramadhani Portfolio",
+  shortName: "QA Portfolio",
+};
+
 export const profile = {
   name: "Raditya Aria Ramadhani",
   role: "Automation QA Engineer",

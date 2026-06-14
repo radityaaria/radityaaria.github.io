@@ -1,13 +1,12 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/data/profile";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://yourportfolio.com"; // Ganti dengan domain kamu
-
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }
