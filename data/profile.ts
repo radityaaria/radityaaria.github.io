@@ -91,7 +91,7 @@ export const experiences = [
   {
     title: "Automation QA Engineer",
     company: "Golden Digital",
-    period: "February 2026 - Present",
+    period: "February 2026 - August 2026",
     description: "Developing comprehensive test cases and coding test scripts for End-to-End (E2E) testing using the Cypress framework.",
     achievements: [
       "Developed comprehensive test cases and test scripts for E2E testing using Cypress framework",
